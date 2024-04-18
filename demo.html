@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Message Example</title>
+    <script>
+        function sendMessage() {
+            var message = {
+                action: 'button_click',
+                data: 'Button clicked!'
+            };
+            window.postMessage(JSON.stringify(message), '*');
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="sendMessage()">Click Me</button>
+</body>
+
+</html>
