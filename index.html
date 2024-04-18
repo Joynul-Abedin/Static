@@ -42,8 +42,11 @@
                 action: 'button_click',
                 data: 'Button clicked!'
             };
-            alert('Message: ' + message.data); // Showing a popup alert with the message
-            window.postMessage(JSON.stringify(message), '*');
+            alert('Message: ' + message.data); // Shows an alert with the message
+            window.postMessage(JSON.stringify(message), '*'); // Posts message for WebView to catch
+
+            // Navigate to a new URL which the WebView can detect
+            window.location.href = 'https://example.com/invoice?token=123';
         }
     </script>
 </body>
