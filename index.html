@@ -5,18 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Message Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:focus {
+            box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="sendMessage()">Click Me</button>
     <script>
         function sendMessage() {
             var message = {
                 action: 'button_click',
                 data: 'Button clicked!'
             };
+            alert('Message: ' + message.data); // Showing a popup alert with the message
             window.postMessage(JSON.stringify(message), '*');
         }
     </script>
-</head>
-<body>
-    <button onclick="sendMessage()">Click Me</button>
 </body>
 
 </html>
