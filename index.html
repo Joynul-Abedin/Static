@@ -15,6 +15,7 @@
             background-color: #f4f4f9;
             font-family: Arial, sans-serif;
         }
+
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -25,11 +26,13 @@
             cursor: pointer;
             outline: none;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         button:focus {
-            box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, .25);
         }
     </style>
 </head>
@@ -43,7 +46,7 @@
                 data: 'Button clicked!'
             };
             alert('Message: ' + message.data); // Shows an alert with the message
-            window.ReactNativeWebView.postMessage(JSON.stringify(message), '*'); // Posts message for WebView to catch
+            window.ReactNativeWebView.postMessage(JSON.stringify(message)); // Posts message for WebView to catch
 
             // Navigate to a new URL which the WebView can detect
             window.location.href = 'https://example.com/invoice?token=123';
