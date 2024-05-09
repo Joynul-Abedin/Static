@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -46,7 +46,7 @@
                 data: 'Button clicked!'
             };
             // alert('Message: ' + message.data); // Shows an alert with the message
-            window.ReactNativeWebView.postMessage(JSON.stringify('https://morth.nic.in/sites/default/files/dd12-13_0.pdf')); // Posts message for WebView to catch
+            window.ReactNativeWebView.postMessage(JSON.stringify('https://api-bjitgroupdev.storekeepercloud.com/download/s3base/g/BillingModule/Invoice_00000001.pdf?file_id=153&k=661cc55b-2293-40d2-ab9f-d8ae0585f596&e=1713863535&s=jps94HbNHuwIaWYybPwpKoVq5JO4ifRVPGmrG4iAU83RrOjxfvcXtizrA%7EzoQC%7Ea4%7ExxfYx0JU7pBEUekA9Rm1dHVJDTaztBmso8H74ZpSTpEKxwmuOmz5Km7fHP%7ErE39xpNwqahZ9xHDmctzCqm49d5aL9EBreKlqHAE9oRVgI_')); // Posts message for WebView to catch
 
             // Navigate to a new URL which the WebView can detect
             window.location.href = 'https://example.com/invoice?token=123';
@@ -54,4 +54,33 @@
     </script>
 </body>
 
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+</script>
+</head>
+<body>
+
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+
+</body>
 </html>
+
